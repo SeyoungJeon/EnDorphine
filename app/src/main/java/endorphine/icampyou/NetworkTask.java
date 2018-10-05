@@ -275,6 +275,13 @@ public class NetworkTask extends AsyncTask<Void, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
+
+        //result 값이 null 일 때
+        if(result == null){
+            Toast.makeText(context,"인터넷 연결을 확인하세요",Toast.LENGTH_LONG).show();
+            return;
+        }
+
         ImageConversion imageConversion = new ImageConversion();
 
         //경우에 따른 스위치문
